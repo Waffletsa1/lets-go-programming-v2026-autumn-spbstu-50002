@@ -2,16 +2,21 @@ package main
 
 import "fmt"
 
-func processDepartment(K int) {
+func processDepartment(k int) {
 	minTemp := 15
 	maxTemp := 30
-	for range K {
+
+	for range k {
 		var operator string
+
 		var temp int
+
 		if _, err := fmt.Scan(&operator, &temp); err != nil {
 			fmt.Println("Invalid temperature setting")
+
 			return
 		}
+
 		switch operator {
 		case ">=":
 			if temp > minTemp {
@@ -23,8 +28,10 @@ func processDepartment(K int) {
 			}
 		default:
 			fmt.Println("Invalid operator")
+
 			continue
 		}
+
 		if minTemp > maxTemp {
 			fmt.Println(-1)
 		} else {
@@ -34,17 +41,23 @@ func processDepartment(K int) {
 }
 
 func main() {
-	var N int
-	if _, err := fmt.Scan(&N); err != nil {
+	var n int
+
+	if _, err := fmt.Scan(&n); err != nil {
 		fmt.Println("Invalid department number")
+
 		return
 	}
-	for range N {
-		var K int
-		if _, err := fmt.Scan(&K); err != nil {
+
+	for range n {
+		var k int
+
+		if _, err := fmt.Scan(&k); err != nil {
 			fmt.Println("Invalid worker number")
+
 			return
 		}
-		processDepartment(K)
+
+		processDepartment(k)
 	}
 }
