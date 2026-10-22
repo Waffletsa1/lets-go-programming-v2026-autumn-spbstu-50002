@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-func processDepartment(k int) {
+func processDepartment(workersCount int) {
 	minTemp := 15
 	maxTemp := 30
 
-	for range k {
+	for range workersCount {
 		var operator string
 
 		var temp int
@@ -41,23 +41,23 @@ func processDepartment(k int) {
 }
 
 func main() {
-	var n int
+	var departmentsCount int
 
-	if _, err := fmt.Scan(&n); err != nil {
+	if _, err := fmt.Scan(&departmentsCount); err != nil {
 		fmt.Println("Invalid department number")
 
 		return
 	}
 
-	for range n {
-		var k int
+	for range departmentsCount {
+		var workersCount int
 
-		if _, err := fmt.Scan(&k); err != nil {
+		if _, err := fmt.Scan(&workersCount); err != nil {
 			fmt.Println("Invalid worker number")
 
 			return
 		}
 
-		processDepartment(k)
+		processDepartment(workersCount)
 	}
 }
